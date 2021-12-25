@@ -33,7 +33,7 @@ async function run() {
     const msg = data.toString("utf8");
 
     if (msg.includes(" : ")) {
-      if (config.teamChatDisabled && msg.startsWith("[")) {
+      if (config.teamChatDisabled && msg.includes(") ") && msg.includes("(")) {
         return;
       }
       handleChatMessage(msg, connection, selfName);
